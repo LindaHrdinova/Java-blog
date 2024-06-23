@@ -6,25 +6,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
 public class PostService {
 
-    @Autowired
-    private PostRepository postRepository;
 
     
     public List<Post> findAll() {
         return postRepository.findAll();
     }
 
-    public Page<Post> getPostsPage(int pageNumber, int pageSize) {
-        Pageable pageable = PageRequest.of(pageNumber, pageSize);
-        return postRepository.findAll(pageable);
+    private final PostRepository postRepository;
+
+    public PostService(PostRepository postRepository) {
+        this.postRepository = postRepository;
     }
+
+    public Page<Post> getPostsOrderByPublished(Pageable pageable) {
+        LocalDate published = LocalDate.now();
+        return postRepository.findAllByOrderByPublishedDesc(pageable);
+    }
+
 
     public Post singlePost(String slug) {
         return postRepository.findBySlug(slug);

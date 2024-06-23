@@ -1,5 +1,10 @@
 package cz.czechitas.java2webapps.ukol7.controller;
 
+import cz.czechitas.java2webapps.ukol7.entity.Post;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import cz.czechitas.java2webapps.ukol7.service.PostService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,19 +12,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.time.LocalDate;
+
 @Controller
 @RequestMapping("")
 public class PostController {
-    private final PostService postService;
 
-    public PostController(PostService postService) {
-        this.postService = postService;
-    }
+    @Autowired
+    private PostService postService;
 
     @GetMapping("")
-    public ModelAndView blog() {
+    public ModelAndView newestPosts() {
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("posts", postService.getPostsPage(0,5));
+        Pageable pageable = PageRequest.of(0, 5);
+        Page<Post> posts = postService.getPostsOrderByPublished(pageable);
+        modelAndView.addObject("posts", posts);
         return modelAndView;
     }
 

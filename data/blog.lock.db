@@ -1,6 +1,6 @@
 #FileLock
-#Sun Jun 23 04:04:35 CEST 2024
+#Sun Jun 23 02:34:37 UTC 2024
 hostName=LAPTOP-MFMO48BE.home
-id=19042d68cfc5ff6e4200123a3ca073b0942ffb580f4
+id=19042f20a9c1ebbd6b49fb9688bd4809ecb8db21074
 method=file
-server=10.0.1.26\:52536
+server=10.0.1.26\:53393

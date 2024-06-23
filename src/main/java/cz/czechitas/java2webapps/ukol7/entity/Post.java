@@ -14,7 +14,9 @@ public class Post {
     private String title;
     private String perex;
     private String body;
+
     private LocalDate published;
+    @OrderBy(value = "published")
 
     public Long getId() {
         return id;

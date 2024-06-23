@@ -22,6 +22,7 @@ footer {
 .blog {
     text-align: justify;
     background-color: aliceblue;
+    margin: 20px 0;
     padding: 15px 30px 40px;
     width: 75%;
     border-radius: 10px;
