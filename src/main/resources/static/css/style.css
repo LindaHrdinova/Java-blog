@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif;
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.blog {
+    text-align: justify;
+    background-color: aliceblue;
+    padding: 15px 30px 40px;
+    width: 75%;
+    border-radius: 10px;
+}
