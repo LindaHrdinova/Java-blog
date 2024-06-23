@@ -28,8 +28,8 @@ public class PostService {
     }
 
     public Page<Post> getPostsOrderByPublished(Pageable pageable) {
-        LocalDate published = LocalDate.now();
-        return postRepository.findAllByOrderByPublishedDesc(pageable);
+        LocalDate today = LocalDate.now();
+        return postRepository.findByPublishedBeforeOrderByPublishedDesc(today, pageable);
     }
 
 
