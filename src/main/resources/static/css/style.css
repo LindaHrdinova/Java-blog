@@ -13,6 +13,12 @@ header {
     font-size: 2rem;
 }
 
+footer {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 1.5rem;
+}
+
 .blog {
     text-align: justify;
     background-color: aliceblue;

@@ -14,6 +14,7 @@
     <div class="blog">
         <header><h1>Vítejte na blogu!</h1></header>
         [#nested]
+        <footer>Linda Hrdinová - Czechitas Java 2</footer>
     </div>
     </body>
     </html>

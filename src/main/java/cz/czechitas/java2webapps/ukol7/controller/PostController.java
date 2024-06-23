@@ -19,7 +19,7 @@ public class PostController {
     @GetMapping("")
     public ModelAndView blog() {
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("posts", postService.findAll());
+        modelAndView.addObject("posts", postService.getPostsPage(0,5));
         return modelAndView;
     }
 
