@@ -1,7 +1,4 @@
 [#ftl]
-
-[#-- Proč ve cvičeních v hodině tento řádek není potřeba, ale teď v mém úkolu ano? --]
-
 [@c.page]
     <div>
         [#list posts.content as post]

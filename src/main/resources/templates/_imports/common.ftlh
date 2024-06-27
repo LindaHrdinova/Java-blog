@@ -31,6 +31,6 @@
     [#if active]
         <span class="page active">${text}</span>
     [#else ]
-        <a href="${createURL({"size": posts.size, "page": page})}" class="page">${text}</a>
+        <a href="${createURL({"size": 5, "page": page})}" class="page">${text}</a>
     [/#if]
 [/#macro]

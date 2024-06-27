@@ -25,7 +25,7 @@ public class PostController {
     @GetMapping("")
     public ModelAndView newestPosts(@PageableDefault() Pageable pageable) {
         ModelAndView modelAndView = new ModelAndView("index");
-        pageable = PageRequest.of(0, 5);
+        //pageable = PageRequest.of(0, 5);
         Page<Post> posts = postService.getPostsOrderByPublished(pageable);
         modelAndView.addObject("posts", posts);
         return modelAndView;
