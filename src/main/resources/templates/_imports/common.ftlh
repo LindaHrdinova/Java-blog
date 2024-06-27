@@ -19,3 +19,18 @@
     </body>
     </html>
 [/#macro]
+
+[#macro pager]
+    <div class="pager">
+        [@pagerLink page=posts.number - 1 active=posts.first text="předchozí" /]
+        [@pagerLink page=posts.number + 1 active=posts.last text="další" /]
+    </div>
+[/#macro]
+
+[#macro pagerLink page text active]
+    [#if active]
+        <span class="page active">${text}</span>
+    [#else ]
+        <a href="${createURL({"size": posts.size, "page": page})}" class="page">${text}</a>
+    [/#if]
+[/#macro]

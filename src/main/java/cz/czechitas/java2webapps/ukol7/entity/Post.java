@@ -1,6 +1,7 @@
 package cz.czechitas.java2webapps.ukol7.entity;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -14,7 +15,6 @@ public class Post {
     private String title;
     private String perex;
     private String body;
-
     private LocalDate published;
     @OrderBy(value = "published")
 

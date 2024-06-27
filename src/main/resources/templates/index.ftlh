@@ -1,5 +1,4 @@
 [#ftl]
-[#import '_imports/common.ftlh' as c]
 
 [#-- Proč ve cvičeních v hodině tento řádek není potřeba, ale teď v mém úkolu ano? --]
 
@@ -15,5 +14,7 @@
             <a href="/${post.slug}">Celý článek</a>
             <hr>
         [/#list]
-    </div>
+
+
+    </div> [@c.pager /]
 [/@c.page]
